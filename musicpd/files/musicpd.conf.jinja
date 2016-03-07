@@ -1,0 +1,7 @@
+# Managed by salt - changes will be overwritten
+{%- for key, value in settings['lookup']|dictsort %}
+{{ key }} "{{ value }}"
+{%- endfor %}
+audio_output {
+    type  "{{ settings['audio_output'] }}"
+}

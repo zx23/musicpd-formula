@@ -1,0 +1,7 @@
+musicpd:
+  lookup:
+    music_directory: /home/foo/music
+    playlist_directory: /home/foo//playlists
+  config: /home/foo/musicpd.conf
+  user: musicpd
+  uid: 12345

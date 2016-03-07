@@ -1,0 +1,35 @@
+{## Start with  defaults from defaults.sls ##}
+{% import_yaml "musicpd/defaults.yaml" as default_settings %}
+
+{##
+Setup variable using grains['os_family'] based logic, only add key:values here
+that differ from whats in defaults.yaml
+##}
+{% set os_family_map = salt['grains.filter_by']({
+    'FreeBSD': {
+      'service': 'musicpd',
+      'package': 'musicpd',
+      'user': 'mpd',
+      'group': 'mpd',
+      'uid': 137,
+      'gid': 137,
+      'homedir': '/var/mpd',
+      'fullname': 'MusicPD pseudo-user',
+      'shell': '/usr/sbin/nologin',
+      'config': '/usr/local/etc/musicpd.conf',
+      'audio_output': 'oss',
+    },
+  },
+  grain="os_family",
+  merge=salt['pillar.get']('os_family_map:lookup'))
+%}
+
+{## Merge the flavor_map to the default settings ##}
+{% do default_settings.musicpd.update(os_family_map) %}
+
+{## Merge in template:lookup pillar ##}
+{% set musicpd = salt['pillar.get'](
+  'musicpd',
+  default=default_settings.musicpd,
+  merge=True)
+%}
