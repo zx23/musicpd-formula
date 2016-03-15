@@ -1,7 +1,7 @@
 musicpd
 =======
 
-Formula to install, configure and start musicpd.
+Formula to install, configure and start `musicpd <http://www.musicpd.org/>`_..
 
 .. note::
 
@@ -17,6 +17,6 @@ Available states
 ``musicpd``
 ---------
 
-Install and turn on musicpd.
+Install, configure and start musicpd.
 
 See ``pillar.example`` for pillar-data for a sample configuration.
