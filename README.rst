@@ -19,4 +19,4 @@ Available states
 
 Install, configure and start musicpd.
 
-See ``pillar.example`` for pillar-data for a sample configuration.
+See ``pillar.example`` for a sample configuration.
