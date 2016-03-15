@@ -1,7 +1,7 @@
 musicpd
 =======
 
-Formula to install, configure and start `musicpd <http://www.musicpd.org/>`_..
+Formula to install, configure and start `musicpd <http://www.musicpd.org/>`_.
 
 .. note::
 
