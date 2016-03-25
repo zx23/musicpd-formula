@@ -4,4 +4,3 @@ musicpd:
     playlist_directory: /home/foo//playlists
   config: /home/foo/musicpd.conf
   user: musicpd
-  uid: 12345

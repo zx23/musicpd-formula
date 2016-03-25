@@ -11,20 +11,30 @@ that differ from whats in defaults.yaml
       'package': 'musicpd',
       'user': 'mpd',
       'group': 'mpd',
-      'uid': 137,
-      'gid': 137,
       'homedir': '/var/mpd',
       'fullname': 'MusicPD pseudo-user',
       'shell': '/usr/sbin/nologin',
       'config': '/usr/local/etc/musicpd.conf',
       'audio_output': 'oss',
     },
+    'Debian': {
+      'service': 'mpd',
+      'package': 'mpd',
+      'user': 'mpd',
+      'group': 'mpd',
+      'homedir': '/var/lib/mpd',
+      'fullname': 'MusicPD pseudo-user',
+      'shell': '/bin/false',
+      'config': '/etc/mpd.conf',
+      'audio_output': 'alsa',
+    },
+
   },
   grain="os_family",
   merge=salt['pillar.get']('os_family_map:lookup'))
 %}
 
-{## Merge the flavor_map to the default settings ##}
+{## Merge the os_map to default_settings ##}
 {% do default_settings.musicpd.update(os_family_map) %}
 
 {## Merge in template:lookup pillar ##}

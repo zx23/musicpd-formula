@@ -37,7 +37,6 @@ musicpd:
       - file: musicpd
   user.present:
     - name: {{ musicpd.user }}
-    - uid: {{ musicpd.uid }}
     - shell: {{ musicpd.shell }}
     - fullname: {{ musicpd.fullname }}
     - require:
@@ -45,7 +44,6 @@ musicpd:
       - pkg: musicpd
   group.present:
     - name: {{ musicpd.group }}
-    - gid: {{ musicpd.gid }}
 
 music_directory:
   file.directory:
