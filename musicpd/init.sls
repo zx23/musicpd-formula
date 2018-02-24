@@ -43,7 +43,9 @@ musicpd:
 music_directory:
   file.directory:
     - name: {{ musicpd.lookup.music_directory }}
+    - makedirs: True
 
 playlist_directory:
   file.directory:
     - name: {{ musicpd.lookup.playlist_directory }}
+    - makedirs: True
