@@ -1,8 +1,3 @@
-{% if 'BSD' in salt['grains.get']('os') %}
-{% set group = 'wheel' %}
-{% else %}
-{% set group = 'root' %}
-{% endif %}
 {% from "musicpd/map.jinja" import musicpd with context %}
 
 musicpd:
@@ -25,7 +20,7 @@ musicpd:
         settings: {{ musicpd }}
     - template: jinja
     - user: root
-    - group: {{ group }}
+    - group: {{ musicpd.wheel_group }}
     - mode: '0644'
     - require:
       - pkg: musicpd
