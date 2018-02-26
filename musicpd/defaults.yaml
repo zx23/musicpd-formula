@@ -1,5 +1,5 @@
 musicpd:
-  lookup:
+  global_config:
     music_directory: /var/mpd/music
     playlist_directory: /var/mpd/playlists
     db_file: /var/mpd/database

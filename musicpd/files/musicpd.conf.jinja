@@ -1,5 +1,5 @@
 # Managed by salt - changes will be overwritten
-{%- for key, value in settings['lookup']|dictsort %}
+{%- for key, value in settings['global_config']|dictsort %}
 {{ key }} "{{ value }}"
 {%- endfor %}
 audio_output {

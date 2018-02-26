@@ -42,10 +42,10 @@ musicpd:
 
 music_directory:
   file.directory:
-    - name: {{ musicpd.lookup.music_directory }}
+    - name: {{ musicpd.global_config.music_directory }}
     - makedirs: True
 
 playlist_directory:
   file.directory:
-    - name: {{ musicpd.lookup.playlist_directory }}
+    - name: {{ musicpd.global_config.playlist_directory }}
     - makedirs: True
