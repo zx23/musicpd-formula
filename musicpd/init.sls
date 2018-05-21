@@ -49,3 +49,11 @@ playlist_directory:
   file.directory:
     - name: {{ musicpd.global_config.playlist_directory }}
     - makedirs: True
+
+pid_directory:
+  file.directory:
+    - name: /var/mpd
+    - makedirs: True
+    - user: {{ musicpd.user }}
+    - group: {{ musicpd.group }}
+    - mode: '0644'
