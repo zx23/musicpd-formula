@@ -25,7 +25,7 @@ musicpd:
     - require:
       - pkg: musicpd
   cmd.wait:
-    - name: 'service musicpd restart'
+    - name: 'service {{ musicpd.service }} restart'
     - user: root
     - watch:
       - pkg: musicpd
