@@ -56,4 +56,4 @@ pid_directory:
     - makedirs: True
     - user: {{ musicpd.user }}
     - group: {{ musicpd.group }}
-    - mode: '0644'
+    - mode: '0755'
